@@ -1,0 +1,104 @@
+
+<mat-card>
+  <!--<h1>Create Task</h1>-->
+
+    <form (submit)="submitTask(taskForm)" #taskForm="ngForm">
+      <mat-form-field>
+      <label  for="task_name">Task Name:</label>
+      <input
+        matInput
+        type="text"
+        name="task_name"
+        ngModel
+        required
+        minlength="3"
+        placeholder="Enter the Task Name"
+        #task_name="ngModel">
+      <mat-error *ngIf="task_name.invalid">Please enter a correct Task name.</mat-error>
+
+   </mat-form-field>
+
+
+           <mat-form-field>
+          <label for="task_description">Task Description:</label>
+          <textarea
+          matInput
+          rows="2"
+          name="task_description"
+          ngModel
+          required
+          placeholder="Task Description"
+          #task_description="ngModel"></textarea>
+        <mat-error *ngIf="task_description.invalid">Please enter a task description.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+        <label for="assignee">Assignee:</label>
+        <input
+        matInput
+        type="text"
+        name="assignee"
+        ngModel
+        required
+        minlength="3"
+        placeholder="Enter Assignee Name"
+        #assignee="ngModel">
+      <mat-error *ngIf="assignee.invalid">Please enter a Assignee.</mat-error>
+       </mat-form-field>
+
+
+
+
+            <mat-form-field>
+            <label for="date">Start Date:</label>
+            <input
+              type="date"
+              ngModel
+              name="start_date"
+              deadline="ngModel"
+              class="form-control"
+              id="start_date"
+              placeholder="Enter Start Date"
+              aria-label="taskid"
+              aria-describedby="basic-addon1"
+              required
+            />
+          </mat-form-field>
+
+
+
+
+            <mat-form-field>
+            <mat-label for="date">Due Date:</mat-label>
+            <input
+              type="date"
+              ngModel
+              name="due_date"
+              deadline="ngModel"
+              class="form-control"
+              id="due_date"
+              placeholder="Enter Due Date"
+              aria-label="taskid"
+              aria-describedby="basic-addon1"
+              required
+            />
+
+
+           </mat-form-field>
+
+
+
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">Save Task</button>
+    </form>
+
+
+</mat-card>
+
+
+
+
+

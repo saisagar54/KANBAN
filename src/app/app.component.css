@@ -1,0 +1,16 @@
+.mat-toolbar{
+  background-color:rgb(26, 146, 226);
+}
+.mat-card{
+  background-image:url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+  margin-top: 1rem;
+  width: 95%;
+  margin: auto;
+}
+.mat-card-title{
+  margin: auto;
+}
+
+span {
+  margin: auto;
+}

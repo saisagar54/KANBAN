@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+}
+.task-sections{
+  display: flex;
+  /* gap: 30px; */
+  justify-content: space-evenly;
+
+}
+.section{
+ width: 400px;
+ /* justify-content: space-evenly; */
+}

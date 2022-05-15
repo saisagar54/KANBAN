@@ -1,0 +1,9 @@
+mat-card-title{
+  background-color: yellow;
+}
+mat-card{
+  background-image:url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+  border: 2px solid red;
+  width:300;
+ margin-right: 2em;
+}
