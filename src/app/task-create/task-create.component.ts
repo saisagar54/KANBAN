@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TaskService } from './../task.service';
+import {Task} from '../app.task.model';
 @Component({
   selector: 'app-task-create',
   templateUrl: './task-create.component.html',
@@ -8,11 +9,7 @@ import { TaskService } from './../task.service';
 })
 export class TaskCreateComponent implements OnInit {
 
-  task_name="";
-  task_description="";
-  assignee="";
-  start_date="";
-  due_date="";
+  Status = ['ToDo', 'InProgress', 'Completed'];
 
   constructor(public taskService: TaskService) { }
 
@@ -27,6 +24,7 @@ export class TaskCreateComponent implements OnInit {
       form.value.assignee,
       form.value.start_date,
       form.value.due_date,
+      form.value.status,
 
     );
   }

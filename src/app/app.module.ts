@@ -19,6 +19,7 @@ import { InprogressComponent } from './body/inprogress/inprogress.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { CompeleteComponent } from './body/compelete/compelete.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import{HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatMenuModule,
     MatIconModule,
     MatExpansionModule,
-    DragDropModule
+    DragDropModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

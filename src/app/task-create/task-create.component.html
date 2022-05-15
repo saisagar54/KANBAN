@@ -47,6 +47,26 @@
        </mat-form-field>
 
 
+       <label for="Status">Status:</label>
+          <div class="status-dropdown">
+            <mat-form-field appearance="fill">
+              <mat-label>Set Status</mat-label>
+              <select
+                matNativeControl
+                required
+                name="status"
+                ngModel
+                #status="ngModel"
+              >
+                <option
+                  *ngFor="let status of Status"
+                  value="{{ status }}"
+                >
+                  {{ status }}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
 
 
             <mat-form-field>
@@ -63,6 +83,14 @@
               aria-describedby="basic-addon1"
               required
             />
+            <div
+            class="text-muted"
+            *ngIf="
+              !taskForm.controls['start_date'].valid &&
+              taskForm.controls['start_date']?.touched">
+
+              <small> Please Enter Valid Start date </small>
+        </div>
           </mat-form-field>
 
 
@@ -82,9 +110,17 @@
               aria-describedby="basic-addon1"
               required
             />
+            <div
+            class="text-muted"
+            *ngIf="
+              !taskForm.controls['due_date'].valid &&
+              taskForm.controls['due_date']?.touched">
 
-
+              <small> Please Enter Valid due Date </small>
+            </div>
            </mat-form-field>
+
+
 
 
 

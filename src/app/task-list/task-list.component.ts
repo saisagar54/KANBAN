@@ -18,16 +18,18 @@ export class TaskListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.Tasks = this.taskService.getTasks();
-    console.log(this.Tasks);
-    this.tasksSub = this.taskService
-      .getTaskUpdateListener()
-      .subscribe((Tasks: Task[]) => {
+    this.taskService.getTasks();
+    console.log("inside list",this.Tasks);
+    this.tasksSub = this.taskService.getTaskUpdateListener().subscribe((Tasks: Task[]) => {
         this.Tasks = Tasks;
+    console.log("List of task",this.Tasks);
       });
   }
   ngOnDestroy(): void {
     this.tasksSub?.unsubscribe();
   }
+  /*onDelete(Id: string | undefined){
+    this.taskService.deletePost(Id);
+  }*/
 
 }

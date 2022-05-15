@@ -9,3 +9,6 @@ mat-card{
   background-color: rgb(240, 208, 120);
 }
 
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
