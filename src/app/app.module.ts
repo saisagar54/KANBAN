@@ -15,6 +15,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { TodoComponent } from './body/todo/todo.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { InprogressComponent } from './body/inprogress/inprogress.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { CompeleteComponent } from './body/compelete/compelete.component';
@@ -42,6 +43,7 @@ import{HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     MatMenuModule,
     MatIconModule,
+    ReactiveFormsModule,
     MatExpansionModule,
     DragDropModule,
     HttpClientModule

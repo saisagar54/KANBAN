@@ -1,16 +1,45 @@
 .mat-toolbar{
-  background-color:rgb(26, 146, 226);
+  background-color:rgb(221, 29, 71);
+  height: 100%;
+}
+
+.bg{
+  background-color: rgb(198, 208, 218);
+  width: 100%;
 }
 .mat-card{
-  background-image:url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
-  margin-top: 1rem;
-  width: 95%;
+  width: 40%;
+  height: 100px;
   margin: auto;
+  border: solid 5px;
+  border-color: rgb(122, 231, 231);
+  padding: 0px;
+
 }
 .mat-card-title{
   margin: auto;
+
+}
+button{
+  background-color: rgba(236, 169, 133, 0.815);
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  font-family: "Lucida Handwriting";
+  color: rgb(4, 83, 83);
+  font-size: 70%;
 }
 
 span {
+  margin: auto;
+  font-family: "Lucida Handwriting";
+  color: rgb(122, 231, 231);
+  font-size: 175%;
+  display: flex;
+  justify-content: center;
+}
+
+div{
+  width: 90%;
   margin: auto;
 }

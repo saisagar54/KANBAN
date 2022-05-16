@@ -1,46 +1,43 @@
-<div class="example-box" >
-<div class="todo-section" >
-  <mat-card class="example-card">
+<div class="todo-section">
 
-    <mat-expansion-panel *ngFor="let task of Tasks" (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-      <mat-panel-title>
-        <h4>Task name:-</h4>  <h3>{{ task.task_name }}</h3>
-      </mat-panel-title>
-     </mat-expansion-panel-header>
-     <h4>Task description:-</h4>
-      <p>
-        {{ task.task_description }}
-      </p>
-      <h4>Assignee:-</h4>  <h5 class="px-2">{{ task.assignee }}</h5>
-      <h4>Status</h4>  <h5 class="px-2">{{ task.status }}</h5>
-      <div class="mat-card-footer">
 
-        <h4>Start :-</h4><h5>{{ task.start_date }}</h5>
-        <h4>Due :-</h4><h5>{{ task.due_date }}</h5>
-        <a
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          aria-label="Example icon-button with a menu"
-        >
-          <mat-icon>more_vert</mat-icon>
-        </a>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>edit</mat-icon>
-            <span>Edit</span>
-          </button>
-          <button mat-menu-item disabled="">
-            <mat-icon>delete</mat-icon>
-            <span>Delete</span>
-          </button>
-        </mat-menu>
-      </div>
+  <mat-expansion-panel *ngFor="let task of Tasks" (opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false">
+    <mat-expansion-panel-header style="background-color:rgb(251, 255, 0)">
+    <mat-panel-title>
+      <h4><b style="font-size: 20px;">Task name : </b></h4> &nbsp;&nbsp;&nbsp;&nbsp; <h3 style="font-size: 20px;">{{ task.task_name }}</h3>
+    </mat-panel-title>
+   </mat-expansion-panel-header>
+<br>
+<div class="example-card">
+   <p style="font-size: 20px;"><b>Task description :</b> &nbsp;&nbsp;&nbsp;&nbsp;{{ task.task_description }}</p>
+
+    <p style="font-size: 20px;"><b>Assignee : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{ task.assignee }}</p>
+    <p style="font-size: 20px;"><b>Status: </b>&nbsp;&nbsp;&nbsp;&nbsp;{{ task.status }}</p>
+
+    <div class="mat-card-footer">
+      <p style="font-size: 20px;"><b>Start :</b>&nbsp;&nbsp;&nbsp;&nbsp;{{ task.start_date }}</p>
+      <p style="font-size: 20px;"><b>Due :</b>&nbsp;&nbsp;&nbsp;&nbsp;{{ task.due_date }}</p>
+      <a
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </a>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/edittask', task.id]">
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item (click)="onDelete(task.id)">
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </div>
+    </div>
 </mat-expansion-panel>
 
-   </mat-card>
-   </div>
-  </div>
 
-
+ </div>

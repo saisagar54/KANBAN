@@ -28,8 +28,8 @@ export class TaskListComponent implements OnInit {
   ngOnDestroy(): void {
     this.tasksSub?.unsubscribe();
   }
-  /*onDelete(Id: string | undefined){
-    this.taskService.deletePost(Id);
-  }*/
+  onDelete(taskId: string | undefined){
+    this.taskService.deleteTask(taskId);
+  }
 
 }

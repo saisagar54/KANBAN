@@ -1,9 +1,20 @@
-<mat-card>
-  <mat-toolbar >
-   <span><h1>{{title}}</h1></span>
-  </mat-toolbar>
+<div class="bg">
+  <br>
+  <mat-card>
+    <mat-toolbar >
+     <span><i><b> <a routerLink="/">{{title}}</a></b></i></span>
+    </mat-toolbar>
+  </mat-card>
+  <br><br>
+  <span style="font-size: 30px;"><button   routerLink="/createtask" ><b>ADD NEW</b></button></span>
     <br>
-    <app-body></app-body>
+    <br>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  <br>
+  <br>
+ <!-- <div [hidden]="false">
     <app-task-create></app-task-create>
-
-</mat-card>
+  </div>
+  </div>-->

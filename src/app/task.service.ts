@@ -18,7 +18,7 @@ export class TaskService {
     .pipe(map((taskData)=>{
       return taskData.tasks.map((task:any) =>{
         return {
-          task_title: task.task_title,
+          task_name: task.task_name,
           task_description: task.task_description,
           assignee: task.assignee,
           status: task.status,
@@ -53,9 +53,6 @@ export class TaskService {
       due_date: due_date,
       status: status,
     };
-    this.tasks.push(task);
-    console.log('Added', task);
-    this.updatedTasks.next([...this.tasks]);
     console.log("*****************************",task);
     this.http.post<{message: string; taskId: string}>('http://localhost:3000/api/tasks',task)
     .subscribe((responseData)=>{
@@ -65,6 +62,22 @@ export class TaskService {
     this.tasks.push(task);
     this.updatedTasks.next([...this.tasks]);
   });
+  }
+
+  deleteTask(taskId: string | undefined){
+    this.http.delete('http://localhost:3000/api/tasks/'+taskId)
+    .subscribe(()=>{
+      const updatedTask = this.tasks.filter(task=> task.id !=taskId);
+      this.tasks = updatedTask;
+      this.updatedTasks.next([...this.tasks]);
+      console.log('Deleted!');
+    })
+  }
+
+  updateTask(id:string, task_name: string, task_description: string,assignee: string, status:string, start_date:Date,due_date:Date){
+    const task: Task = {id: id, task_name: task_name, task_description:task_description,assignee:assignee, status: status,start_date:start_date,due_date:due_date};
+    this.http.put('http://localhost:3000/api/tasks/'+id, task)
+    .subscribe(response => console.log(response));
   }
 
   getTask(id: string | undefined){

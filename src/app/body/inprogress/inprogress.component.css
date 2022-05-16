@@ -1,9 +1,16 @@
-mat-card-title{
-  background-color: yellow;
-}
 mat-card{
-  background-image:url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
-  border: 2px solid red;
+  background-color: rgb(228, 243, 21);
+  border: 4px solid rgb(119, 0, 129);
   width:300;
  margin-right: 2em;
+ height: 90%;
+}
+span {
+  margin: auto;
+  font-family: "Lucida Handwriting";
+  color: rgb(148, 17, 153);;
+  font-size: larger;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
